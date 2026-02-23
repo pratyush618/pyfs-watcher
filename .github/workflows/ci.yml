@@ -69,13 +69,21 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
+      - name: Create virtualenv
+        run: python -m venv .venv
+
       - name: Install maturin & build
         run: |
+          source .venv/bin/activate
           pip install maturin
           maturin develop
 
       - name: Install test deps
-        run: pip install pytest pytest-asyncio pytest-timeout
+        run: |
+          source .venv/bin/activate
+          pip install pytest pytest-asyncio pytest-timeout
 
       - name: Run tests
-        run: pytest tests/
+        run: |
+          source .venv/bin/activate
+          pytest tests/
