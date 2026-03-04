@@ -44,34 +44,6 @@ graph TB
     D --> O
 ```
 
-## Module Structure
-
-```
-pyfs-watcher/
-├── src/                    # Rust source
-│   ├── lib.rs              # PyO3 module definition
-│   ├── walk.rs             # Directory traversal
-│   ├── hash.rs             # File hashing
-│   ├── copy.rs             # Copy/move operations
-│   ├── watch.rs            # Filesystem watching
-│   ├── dedup.rs            # Duplicate detection
-│   ├── search.rs           # Parallel content search
-│   ├── diff.rs             # Directory comparison
-│   ├── sync.rs             # Directory sync
-│   ├── snapshot.rs         # Snapshot/verify
-│   ├── du.rs               # Disk usage
-│   ├── rename.rs           # Batch rename
-│   ├── utils.rs            # Shared walk filter utilities
-│   └── errors.rs           # Error types
-├── py_src/pyfs_watcher/    # Python source
-│   ├── __init__.py         # Re-exports from _core
-│   ├── _core.pyi           # Type stubs
-│   └── watch.py            # async_watch() wrapper
-└── tests/                  # Python tests
-```
-
----
-
 ## GIL Management
 
 The Global Interpreter Lock (GIL) is Python's mechanism for thread safety. Since Rust operations don't need the GIL, pyfs-watcher releases it during heavy computation using `py.allow_threads()`:

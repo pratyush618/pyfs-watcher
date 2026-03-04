@@ -66,33 +66,35 @@ Complete reference for all public symbols exported by `pyfs_watcher`.
 
 ## Import
 
-All symbols are available from the top-level package:
+Functions and the `FileWatcher` class are available from the top-level package:
 
 ```python
 from pyfs_watcher import (
-    # Walk
-    walk, walk_collect, WalkEntry,
-    # Hash
-    hash_file, hash_files, HashResult,
-    # Copy/Move
-    copy_files, move_files, CopyProgress,
-    # Watch
-    FileWatcher, FileChange, async_watch,
-    # Dedup
-    find_duplicates, DuplicateGroup,
-    # Search
-    search, search_iter, SearchResult, SearchMatch, SearchIter,
-    # Diff
-    diff_dirs, DirDiff, DiffEntry, MovedEntry,
-    # Sync
-    sync, SyncResult, SyncProgress, SyncFileError,
-    # Snapshot
-    snapshot, verify, Snapshot, SnapshotEntry, VerifyResult, VerifyChange,
-    # Disk Usage
-    disk_usage, DiskUsage, DiskUsageEntry,
-    # Rename
-    bulk_rename, RenameResult, RenameEntry, RenameFileError,
-    # Exceptions
+    walk, walk_collect, hash_file, hash_files,
+    copy_files, move_files, FileWatcher, async_watch,
+    find_duplicates, search, search_iter, diff_dirs,
+    sync, snapshot, verify, disk_usage, bulk_rename,
+)
+```
+
+Data classes and result types live in `pyfs_watcher.types`:
+
+```python
+from pyfs_watcher.types import (
+    WalkEntry, HashResult, CopyProgress, FileChange,
+    DuplicateGroup, SearchResult, SearchMatch, SearchIter,
+    DirDiff, DiffEntry, MovedEntry,
+    SyncResult, SyncProgress, SyncFileError,
+    Snapshot, SnapshotEntry, VerifyResult, VerifyChange,
+    DiskUsage, DiskUsageEntry,
+    RenameResult, RenameEntry, RenameFileError,
+)
+```
+
+Exceptions live in `pyfs_watcher.errors`:
+
+```python
+from pyfs_watcher.errors import (
     FsWatcherError, WalkError, HashError, CopyError, WatchError,
     SearchError, DirDiffError, SyncError, SnapshotError, DiskUsageError, RenameError,
 )

@@ -78,40 +78,6 @@ pre-commit run --all-files
 
 ---
 
-## Project Structure
-
-```
-pyfs-watcher/
-├── src/                    # Rust source code
-│   ├── lib.rs              # PyO3 module definition
-│   ├── walk.rs             # Directory traversal
-│   ├── hash.rs             # File hashing
-│   ├── copy.rs             # Copy/move operations
-│   ├── watch.rs            # Filesystem watching
-│   ├── dedup.rs            # Duplicate detection
-│   ├── search.rs           # Parallel content search
-│   ├── diff.rs             # Directory comparison
-│   ├── sync.rs             # Directory sync
-│   ├── snapshot.rs         # Snapshot/verify
-│   ├── du.rs               # Disk usage
-│   ├── rename.rs           # Batch rename
-│   ├── utils.rs            # Shared walk filter utilities
-│   └── errors.rs           # Error types
-├── py_src/pyfs_watcher/    # Python package
-│   ├── __init__.py         # Public API re-exports
-│   ├── _core.pyi           # Type stubs for Rust module
-│   ├── py.typed            # PEP 561 marker
-│   └── watch.py            # async_watch() implementation
-├── tests/                  # Python test suite
-├── benches/                # Benchmarks
-├── docs/                   # Documentation (Zensical)
-├── Cargo.toml              # Rust dependencies
-├── pyproject.toml          # Python project config
-└── zensical.toml           # Documentation config
-```
-
----
-
 ## Adding a New Feature
 
 Checklist for adding a new module (e.g., `compress`):
@@ -119,7 +85,7 @@ Checklist for adding a new module (e.g., `compress`):
 1. **Rust implementation** — Create `src/compress.rs` with the core logic
 2. **PyO3 bindings** — Add `#[pyfunction]` and `#[pyclass]` items, register in `src/lib.rs`
 3. **Type stubs** — Add signatures to `py_src/pyfs_watcher/_core.pyi`
-4. **Python re-exports** — Add to `py_src/pyfs_watcher/__init__.py` and `__all__`
+4. **Python re-exports** — Add functions to `py_src/pyfs_watcher/__init__.py`, data classes to `types.py`, and errors to `errors.py`
 5. **Error type** — Add a `CompressError` variant to `errors.rs` and the `.pyi` stub
 6. **Tests** — Add `tests/test_compress.py`
 7. **Documentation** — Add guide page and API reference page
