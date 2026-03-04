@@ -6,6 +6,7 @@ site_author = "Pratyush Sharma"
 repo_url = "https://github.com/pratyush618/pyfs-watcher"
 repo_name = "pratyush618/pyfs-watcher"
 copyright = "Copyright &copy; 2026 Pratyush Sharma"
+extra_css = ["assets/extra.css"]
 
 nav = [
   { "Home" = "index.md" },
@@ -124,4 +125,3 @@ alternate_style = true
 
 [project.extra]
 generator = false
-css = ["assets/extra.css"]

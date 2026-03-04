@@ -2,6 +2,13 @@
   <img src="docs/assets/logo.svg" alt="pyfs-watcher logo" width="180" />
 </p>
 
+<p align="center">
+  <a href="https://pypi.org/project/pyfs_watcher/"><img src="https://img.shields.io/pypi/v/pyfs_watcher" alt="PyPI"></a>
+  <a href="https://pypi.org/project/pyfs_watcher/"><img src="https://img.shields.io/pypi/pyversions/pyfs_watcher" alt="Python"></a>
+  <a href="https://github.com/pratyush618/pyfs-watcher/blob/master/LICENSE"><img src="https://img.shields.io/pypi/l/pyfs_watcher" alt="License"></a>
+  <a href="https://github.com/pratyush618/pyfs-watcher/actions/workflows/ci.yml"><img src="https://github.com/pratyush618/pyfs-watcher/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+</p>
+
 # pyfs_watcher
 
 Rust-powered filesystem toolkit for Python. Fast recursive directory listing, parallel file hashing, bulk copy/move with progress, cross-platform file watching, file deduplication, content search, directory diff/sync, snapshots, disk usage, and batch rename.

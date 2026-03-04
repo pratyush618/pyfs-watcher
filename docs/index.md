@@ -3,8 +3,6 @@ hide:
   - navigation
 ---
 
-# pyfs-watcher
-
 [![PyPI](https://img.shields.io/pypi/v/pyfs_watcher)](https://pypi.org/project/pyfs_watcher/)
 [![Python](https://img.shields.io/pypi/pyversions/pyfs_watcher)](https://pypi.org/project/pyfs_watcher/)
 [![License](https://img.shields.io/pypi/l/pyfs_watcher)](https://github.com/pratyush618/pyfs-watcher/blob/master/LICENSE)
