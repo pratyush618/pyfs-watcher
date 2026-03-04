@@ -20,10 +20,10 @@ jobs:
       - run: pip install ruff
 
       - name: Ruff check
-        run: ruff check python/ tests/ benches/
+        run: ruff check py_src/ tests/ benches/
 
       - name: Ruff format check
-        run: ruff format --check python/ tests/ benches/
+        run: ruff format --check py_src/ tests/ benches/
 
   typecheck:
     name: Mypy
@@ -38,7 +38,7 @@ jobs:
       - run: pip install mypy
 
       - name: Mypy
-        run: mypy python/
+        run: mypy py_src/
 
   rust:
     name: Rust fmt & clippy
