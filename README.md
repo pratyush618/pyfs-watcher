@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="pyfs-watcher logo" width="180" />
+  <img src="https://raw.githubusercontent.com/pratyush618/pyfs-watcher/main/docs/assets/logo.svg" alt="pyfs-watcher logo" width="180" />
 </p>
 
 <p align="center">
